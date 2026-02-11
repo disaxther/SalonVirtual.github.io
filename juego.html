@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OfiChallenge - Dolores Sucre</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header class="header small">
+    <div class="header-inner">
+      <img src="escudo-pequeno.png" alt="Escudo" class="escudo-small" />
+      <div class="header-text">
+        <h2 class="school-name small">Unidad Educativa Fiscal Dolores Sucre</h2>
+        <p class="school-meta small">AMIE 09H01213 • Distrito Guayaquil • Circuito 01</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="manuales.html">Manuales</a>
+      <a href="seleccion-rol.html">Ingresar</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card center">
+      <h3>OfiChallenge</h3>
+      <p>Mejora tus habilidades ofimáticas con tres minijuegos interactivos.</p>
+
+      <div id="start-area">
+        <label>Nombre del jugador</label>
+        <input id="player-name" placeholder="Tu nombre" />
+        <label>Nivel</label>
+        <select id="game-difficulty">
+          <option value="easy">Fácil</option>
+          <option value="medium">Medio</option>
+          <option value="hard">Difícil</option>
+        </select>
+        <div class="form-actions">
+          <button class="btn primary" id="start-game">Iniciar juego</button>
+          <button class="btn" id="view-leaderboard">Ver leaderboard</button>
+        </div>
+      </div>
+
+      <div id="game-area" class="hidden">
+        <div class="game-header">
+          <div>Jugador: <strong id="g-player"></strong></div>
+          <div>Ronda: <strong id="g-round">0</strong></div>
+          <div>Puntaje: <strong id="g-score">0</strong></div>
+          <div>Tiempo: <strong id="g-timer">0</strong>s</div>
+        </div>
+
+        <div id="mini-game" class="mini-game"></div>
+
+        <div class="game-controls">
+          <button class="btn" id="next-round">Siguiente ronda</button>
+          <button class="btn" id="end-game">Finalizar juego</button>
+        </div>
+      </div>
+
+      <div id="leaderboard-area" class="hidden card">
+        <h4>Leaderboard - Top 20</h4>
+        <div id="leaderboard-list" class="list"></div>
+        <div class="form-actions">
+          <button class="btn" id="close-leaderboard">Cerrar</button>
+          <button class="btn" id="clear-leaderboard">Borrar leaderboard</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Contacto del proyecto: <strong>disaxther@gmail.com</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

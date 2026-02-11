@@ -1,0 +1,97 @@
+:root{
+  --primary:#0b5fa5;
+  --accent:#d4a017;
+  --bg:#f3f6fb;
+  --card:#ffffff;
+  --muted:#556070;
+  --max-width:1100px;
+  --radius:12px;
+  --shadow: 0 8px 24px rgba(11,95,165,0.12);
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#ffffff);
+  color:#072033;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  font-size:16px;
+}
+
+.header{
+  background:linear-gradient(90deg, rgba(11,95,165,0.95), rgba(6,60,110,0.95));
+  color:#fff;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header.small{padding:12px}
+.header-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.escudo-large{width:110px;height:110px;object-fit:contain;border-radius:10px;background:#fff;padding:8px}
+.escudo-small{width:56px;height:56px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
+.header-text .school-name{margin:0;font-size:20px;font-weight:700}
+.header-text .school-meta{margin:2px 0 0;font-size:13px;opacity:0.95}
+
+.nav{max-width:var(--max-width);margin:8px auto 0;display:flex;gap:12px}
+.nav a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.06)}
+
+.main-hero{
+  min-height:64vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-size:cover;
+  background-position:center;
+  padding:48px 20px;
+}
+.hero-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  padding:32px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  max-width:920px;
+}
+.hero-escudo{width:96px;height:96px;object-fit:contain;margin-bottom:8px}
+.lead{color:var(--muted);margin-top:6px}
+.hero-actions{display:flex;gap:12px;justify-content:center;margin-top:16px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:#fff;color:var(--primary);text-decoration:none;border:1px solid rgba(11,95,165,0.08);cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border:none;box-shadow:0 6px 18px rgba(11,95,165,0.12)}
+.btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18)}
+.file-btn input{display:none}
+
+.container{max-width:var(--max-width);margin:28px auto;padding:0 16px;display:grid;gap:18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.card.center{text-align:center}
+.small-note{font-size:13px;color:var(--muted);margin-top:8px}
+.list{display:flex;flex-direction:column;gap:10px}
+.list .item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:#f8fbff;border:1px solid #e6f0fb}
+.file-area{margin-top:12px}
+.hidden{display:none}
+
+.form-actions{display:flex;gap:8px;margin-top:12px}
+input,textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid #e6eef8;background:#fff}
+label{font-weight:700;margin-top:8px;display:block}
+.manuals-grid{display:flex;gap:12px;flex-wrap:wrap}
+.manual-card{flex:1;min-width:220px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#f8fbff,#ffffff);border:1px solid #e6f0fb}
+.viewer-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.manual-content{padding:12px;background:#fff;border-radius:8px;margin-top:12px;min-height:160px}
+
+.mini-game{min-height:240px;display:flex;align-items:center;justify-content:center}
+.game-header{display:flex;gap:12px;justify-content:space-between;margin-bottom:12px}
+.leaderboard .row{display:flex;justify-content:space-between;padding:8px;border-radius:8px;background:#f8fafc;margin-bottom:6px}
+
+.footer{padding:14px;text-align:center;color:var(--muted);font-size:14px}
+@media (max-width:720px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .game-header{flex-direction:column;align-items:flex-start;gap:6px}
+}

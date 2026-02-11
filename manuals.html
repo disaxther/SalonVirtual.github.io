@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manuales - Ofimática</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="dolores.png" class="logo-small">
+      <div style="flex:1">
+        <h2>📖 Manuales - Ofimática</h2>
+      </div>
+      <div style="text-align:right;font-size:0.85em;opacity:0.9">
+        <strong>Dolores Sucre</strong><br>
+        AMIE: 09H01213
+      </div>
+      <nav style="margin-left:30px;display:flex;gap:15px;align-items:center;font-size:0.95em">
+        <a href="index.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Inicio</a>
+        <a href="role.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Cambiar rol</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 0; max-width: 100%;">
+    <!-- Selector de manuales -->
+    <div style="display:flex;gap:12px;padding:20px;background:linear-gradient(135deg, #f3f4f6, #e5e7eb);border-radius:12px;margin-bottom:20px;flex-wrap:wrap;justify-content:center">
+      <button class="btn primary" onclick="openFlipbookDirect('manual_word.pdf', 'Word')">📄 Word</button>
+      <button class="btn primary" onclick="openFlipbookDirect('manual_excel.pdf', 'Excel')">📊 Excel</button>
+      <button class="btn primary" onclick="openFlipbookDirect('manual_powerpoint.pdf', 'PowerPoint')">🎨 PowerPoint</button>
+    </div>
+
+    <!-- Flipbook de pantalla completa -->
+    <div id="flipbook-fullpage" style="background:#fff;border-radius:16px;padding:25px;box-shadow:0 20px 60px rgba(0,0,0,0.2);display:none">
+      <!-- Header del flipbook -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;padding-bottom:15px;border-bottom:2px solid var(--gray-border)">
+        <h3 id="flipbook-title" style="flex:1;margin:0;font-size:1.8em;color:var(--primary)">📖 Manual</h3>
+        <button class="btn secondary" onclick="closeFlipbookFull()" style="padding:10px 16px;font-size:0.95em">✕ Cerrar</button>
+      </div>
+
+      <!-- Canvas para el PDF -->
+      <div style="display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg, #f9fafb, #f3f4f6);border-radius:12px;padding:30px;margin:20px 0;min-height:600px;overflow:auto;border:2px solid var(--gray-border)">
+        <canvas id="pdf-canvas-fullpage" style="max-width:100%;max-height:100%;box-shadow:0 10px 30px rgba(0,0,0,0.15)"></canvas>
+      </div>
+
+      <!-- Controles de navegación -->
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:15px;padding-top:15px;border-top:2px solid var(--gray-border)">
+        <button id="prev-btn-full" class="btn primary" onclick="prevPageFull()" style="flex:0 0 auto;padding:12px 20px">⬅️ Anterior</button>
+        <div style="flex:1;text-align:center;font-weight:bold;color:var(--primary);font-size:1.1em">
+          Página <span id="current-page-full">1</span> de <span id="total-pages-full">1</span>
+        </div>
+        <button id="next-btn-full" class="btn primary" onclick="nextPageFull()" style="flex:0 0 auto;padding:12px 20px">Siguiente ➡️</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 Unidad Educativa Dolores Sucre</footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  <script src="script.js"></script>
+</body>
+</html>

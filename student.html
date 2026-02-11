@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panel Estudiante</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="dolores.png" class="logo-small">
+      <div style="flex:1">
+        <h2>👨‍🎓 Panel de Estudiante</h2>
+        <p class="small">Ofimática • 2025-2026</p>
+      </div>
+      <div style="text-align:right;font-size:0.85em;opacity:0.9">
+        <strong>Dolores Sucre</strong><br>
+        AMIE: 09H01213
+      </div>
+      <nav style="margin-left:30px;display:flex;gap:15px;align-items:center;font-size:0.95em">
+        <a href="index.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Inicio</a>
+        <a href="manuals.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Manuales</a>
+        <a href="game.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Juego</a>
+        <a href="role.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Cambiar rol</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>� Tareas - Ofimática</h3>
+        <p class="small" style="margin-bottom:20px">Completa estas actividades en casa. Si necesitas ayuda, consulta los manuales.</p>
+        <div id="student-tasks" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h3>�📚 Materiales Disponibles</h3>
+        <div id="student-materials" class="list">
+          <p class="small">Cargando materiales...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 Unidad Educativa Dolores Sucre</footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OfiChallenge - Juego</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="dolores.png" class="logo-small">
+      <div style="flex:1">
+        <h2>🎮 OfiChallenge</h2>
+        <p class="small">Reta tus habilidades en Ofimática</p>
+      </div>
+      <div style="text-align:right;font-size:0.85em;opacity:0.9">
+        <strong>Dolores Sucre</strong><br>
+        AMIE: 09H01213
+      </div>
+      <nav style="margin-left:30px;display:flex;gap:15px;align-items:center;font-size:0.95em">
+        <a href="index.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Inicio</a>
+        <a href="role.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Cambiar rol</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <label>Tu nombre</label>
+      <input id="player-name" placeholder="Ingresa tu nombre">
+      <div class="actions">
+        <button class="btn primary" id="start-game">▶ Iniciar Juego</button>
+        <button class="btn" id="end-game" disabled>⏹ Finalizar</button>
+      </div>
+
+      <div style="margin-top:16px;padding:12px;background:#f3f4f6;border-radius:8px">
+        <div>🎯 Ronda: <span id="game-round" style="font-weight:bold">0</span> | ⏱ Tiempo: <span id="game-timer" style="font-weight:bold;color:var(--danger)">0</span> | ⭐ Puntaje: <span id="game-score" style="font-weight:bold;color:var(--success)">0</span></div>
+      </div>
+
+      <div id="game-area" style="margin-top:20px"></div>
+
+      <div class="card" style="margin-top:20px">
+        <h4>🏆 Puntuación Más Alta</h4>
+        <div id="leaderboard" class="list"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 Unidad Educativa Dolores Sucre</footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initGame);
+  </script>
+</body>
+</html>

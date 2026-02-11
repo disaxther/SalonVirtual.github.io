@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manuales - Dolores Sucre</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header class="header small">
+    <div class="header-inner">
+      <img src="escudo-pequeno.png" alt="Escudo" class="escudo-small" />
+      <div class="header-text">
+        <h2 class="school-name small">Unidad Educativa Fiscal Dolores Sucre</h2>
+        <p class="school-meta small">AMIE 09H01213 • Distrito Guayaquil • Circuito 01</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="seleccion-rol.html">Ingresar</a>
+      <a href="juego.html">Juego</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Manuales disponibles</h3>
+      <div class="manuals-grid">
+        <div class="manual-card">
+          <h4>Manual Word</h4>
+          <p>Guía de uso básico y avanzado de Word.</p>
+          <button class="btn" data-manual="word">Abrir</button>
+        </div>
+        <div class="manual-card">
+          <h4>Manual PowerPoint</h4>
+          <p>Creación de presentaciones y buenas prácticas.</p>
+          <button class="btn" data-manual="ppt">Abrir</button>
+        </div>
+        <div class="manual-card">
+          <h4>Manual Excel</h4>
+          <p>Fórmulas, tablas y gráficos esenciales.</p>
+          <button class="btn" data-manual="excel">Abrir</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="manual-viewer" class="card hidden">
+      <div class="viewer-header">
+        <h3 id="manual-title">Manual</h3>
+        <div>
+          <button class="btn" id="prev-page">Anterior</button>
+          <span id="page-indicator">Página 1 / 1</span>
+          <button class="btn" id="next-page">Siguiente</button>
+          <button class="btn" id="close-manual">Cerrar</button>
+        </div>
+      </div>
+      <div id="manual-content" class="manual-content"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Contacto del proyecto: <strong>disaxther@gmail.com</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

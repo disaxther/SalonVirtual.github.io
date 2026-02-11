@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Prueba - OfiChallenge</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #1e40af; border-bottom: 3px solid #f59e0b; padding-bottom: 10px; }
+        h2 { color: #3b82f6; margin-top: 30px; }
+        .step { background: #f3f4f6; padding: 15px; margin: 15px 0; border-left: 4px solid #1e40af; border-radius: 4px; }
+        .code { background: #1f2937; color: #fff; padding: 10px; border-radius: 4px; font-family: monospace; margin: 10px 0; overflow-x: auto; }
+        .success { color: #10b981; font-weight: bold; }
+        .warning { color: #f97316; font-weight: bold; }
+        ul { margin: 10px 0 10px 20px; }
+        a { color: #1e40af; text-decoration: none; border-bottom: 1px solid #1e40af; }
+        a:hover { color: #3b82f6; }
+    </style>
+</head>
+<body>
+    <h1>🎓 Guía de Prueba - OfiChallenge Mejorado</h1>
+    
+    <h2>📋 Checklist de Funcionalidades</h2>
+    
+    <div class="step">
+        <h3>✅ 1. Verificar Estructura de Archivos</h3>
+        <p>Asegúrate de que existan estos archivos:</p>
+        <ul>
+            <li><strong>index.html</strong> - Portada con personalización de fondo</li>
+            <li><strong>role.html</strong> - Selección de rol</li>
+            <li><strong>student.html</strong> - Panel estudiante (sin tareas hardcodeadas)</li>
+            <li><strong>teacher.html</strong> - Panel profesor con login</li>
+            <li><strong>manuals.html</strong> - Galería de manuales con flipbook</li>
+            <li><strong>task_detail.html</strong> - Detalle de material</li>
+            <li><strong>game.html</strong> - Juego OfiChallenge</li>
+            <li><strong>css/styles.css</strong> - Estilos con colores y animaciones nuevas</li>
+            <li><strong>js/app.js</strong> - Lógica completa</li>
+            <li><strong>escudo.svg</strong> - Logo SVG</li>
+            <li><strong>manual_word.pdf, manual_excel.pdf, manual_powerpoint.pdf</strong></li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>✅ 2. Prueba Portada (index.html)</h3>
+        <ol>
+            <li>Abre <code>index.html</code> en el navegador</li>
+            <li>Verifica que haya:
+                <ul>
+                    <li>Gradiente azul-púrpura en el hero</li>
+                    <li>Logo con animación flotante</li>
+                    <li>Botón "Comenzar" con efecto hover</li>
+                    <li>Sección de características con iconos (📚 📊 🎮 👨‍🏫)</li>
+                </ul>
+            </li>
+            <li>Prueba cargar imagen de fondo:
+                <ul>
+                    <li>Click en "🖼️ Cambiar fondo"</li>
+                    <li>Selecciona una imagen de tu PC</li>
+                    <li>Recarga la página - la imagen debe persistir</li>
+                </ul>
+            </li>
+            <li>Prueba limpiar fondo: click en "🔄 Limpiar"</li>
+            <li class="success">✓ El fondo debe guardarse/restaurarse automáticamente</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 3. Prueba Selección de Rol (role.html)</h3>
+        <ol>
+            <li>Click en "Comenzar" desde index.html</li>
+            <li>Debes ver dos tarjetas:
+                <ul>
+                    <li>👨‍🎓 Estudiante</li>
+                    <li>👨‍🏫 Profesor</li>
+                </ul>
+            </li>
+            <li class="success">✓ Las tarjetas deben tener animación fadeInUp</li>
+            <li class="success">✓ Los botones deben tener efecto hover y sombra</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 4. Prueba Panel de Estudiante (student.html)</h3>
+        <ol>
+            <li>Click en "Entrar como Estudiante"</li>
+            <li>Verifica:
+                <ul>
+                    <li><span class="warning">NO DEBE HABER TAREAS HARDCODEADAS</span> de ejemplo</li>
+                    <li>Debe mostrar mensaje "No hay materiales disponibles" inicialmente</li>
+                    <li>Elementos de navegación: Inicio, Manuales, Juego</li>
+                </ul>
+            </li>
+            <li class="success">✓ El panel debe estar limpio sin contenido de prueba</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 5. Prueba Panel de Profesor (teacher.html)</h3>
+        <ol>
+            <li>Vuelve a role.html y click en "Entrar como Profesor"</li>
+            <li>Intenta login con credenciales incorrectas - debe mostrar error</li>
+            <li>Login correcto:
+                <div class="code">email: disaxther@gmail.com
+password: 12345</div>
+            </li>
+            <li>Crea un material de prueba:
+                <ul>
+                    <li>Título: "Prueba Word"</li>
+                    <li>Descripción: "Material de prueba"</li>
+                    <li>Tipo: Archivo</li>
+                    <li>Archivo desc: "Guía básica"</li>
+                </ul>
+            </li>
+            <li class="success">✓ Material debe aparecer en "Materiales Publicados"</li>
+            <li>Vuelve a student.html - debe aparecer el material creado</li>
+            <li class="success">✓ Ahora el panel de estudiante debe mostrar materiales</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 6. Prueba Flipbook de Manuales (manuals.html)</h3>
+        <ol>
+            <li>Desde cualquier rol, click en "Manuales"</li>
+            <li>Debes ver 3 tarjetas: Word (📄), Excel (📊), PowerPoint (🎨)</li>
+            <li class="success">✓ Las tarjetas deben tener iconos grandes con animación float</li>
+            <li>Click en "Manual Word"</li>
+            <li>Se abrirá un modal con:
+                <ul>
+                    <li>Canvas renderizando el PDF</li>
+                    <li>Botones: ⬅️ Anterior y Siguiente ➡️</li>
+                    <li>Indicador: "Página X de Y"</li>
+                    <li>Botón ✕ Cerrar en la esquina</li>
+                </ul>
+            </li>
+            <li class="success">✓ Los botones deben cambiar de página correctamente</li>
+            <li class="success">✓ El primer botón debe deshabilitarse en página 1</li>
+            <li class="success">✓ El último botón debe deshabilitarse en última página</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 7. Prueba Juego OfiChallenge (game.html)</h3>
+        <ol>
+            <li>Desde student.html, click en "Juego"</li>
+            <li>Ingresa tu nombre</li>
+            <li>Click en "▶ Iniciar Juego"</li>
+            <li>Verifica:
+                <ul>
+                    <li>Se muestra una pregunta con 4 opciones</li>
+                    <li>Contador de ronda (🎯), tiempo (⏱), puntaje (⭐)</li>
+                    <li>El tiempo aumenta cada segundo</li>
+                </ul>
+            </li>
+            <li>Responde 5 preguntas</li>
+            <li class="success">✓ Al finalizar, tu puntuación debe aparecer en el leaderboard</li>
+            <li>Juega de nuevo - el ranking debe actualizarse</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 8. Verifica Estilos y Animaciones</h3>
+        <p>En cualquier página:</p>
+        <ul>
+            <li><span class="success">Colores</span>: Azul primario (#1e40af), Naranja (#f59e0b), Púrpura (#8b5cf6)</li>
+            <li><span class="success">Header</span>: Gradiente azul-púrpura, logo con animación float</li>
+            <li><span class="success">Botones</span>: Efecto ripple (onda) al hover, sombra aumenta</li>
+            <li><span class="success">Tarjetas</span>: Suben al hover (translateY -8px), sombra aumenta</li>
+            <li><span class="success">Inputs</span>: Borde azul al focus, escala 1.01, sombra azul</li>
+            <li><span class="success">Footer</span>: Gradiente azul-púrpura con borde naranja</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>✅ 9. Verifica Responsividad</h3>
+        <ol>
+            <li>Abre DevTools (F12)</li>
+            <li>Prueba en vista móvil (375px ancho)</li>
+            <li>Verifica:
+                <ul>
+                    <li>Grid se convierte a 1 columna</li>
+                    <li>Botones son clickeables (suficiente tamaño)</li>
+                    <li>Texto legible (no muy pequeño)</li>
+                    <li>Nav se adapta bien en móvil</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>✅ 10. Verifica LocalStorage</h3>
+        <ol>
+            <li>Abre DevTools → Application → LocalStorage</li>
+            <li>Después de crear un material, debes ver <code>ue_materials</code></li>
+            <li>Después de jugar, debes ver <code>ue_leaderboard</code></li>
+            <li>Después de cargar imagen de fondo, debes ver <code>hero_bg</code></li>
+            <li class="success">✓ Los datos deben persistir después de recargar la página</li>
+        </ol>
+    </div>
+
+    <h2>🐛 Solución de Problemas</h2>
+
+    <div class="step">
+        <h3>Problema: El PDF no se carga</h3>
+        <ul>
+            <li>Verifica que los archivos PDF existan en el mismo directorio que index.html</li>
+            <li>Revisa la consola (F12) para errores</li>
+            <li>Asegúrate de que PDF.js esté cargado desde CDN</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>Problema: Las animaciones no se ven</h3>
+        <ul>
+            <li>Verifica que css/styles.css se cargue correctamente</li>
+            <li>Abre DevTools → Network → busca styles.css (debe ser Status 200)</li>
+            <li>Los navegadores antiguos (IE) no soportan animaciones CSS3</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>Problema: Los datos no se guardan</h3>
+        <ul>
+            <li>Verifica que localStorage esté habilitado en el navegador</li>
+            <li>Algunos navegadores desactivan localStorage en navegación privada</li>
+            <li>Revisa la cuota de almacenamiento (~5-10MB por dominio)</li>
+        </ul>
+    </div>
+
+    <h2>📝 Resumen de Cambios</h2>
+    <ul>
+        <li>✅ Colores mejorados: Azul, Naranja, Púrpura en gradientes</li>
+        <li>✅ Animaciones suaves en todos los elementos</li>
+        <li>✅ Flipbook PDF con navegación de páginas</li>
+        <li>✅ Panel estudiante limpio sin contenido hardcodeado</li>
+        <li>✅ Personalización de fondo en portada</li>
+        <li>✅ Interfaz moderna y profesional</li>
+    </ul>
+
+    <hr>
+    <p style="text-align: center; color: #666; margin-top: 40px;">
+        Última actualización: 2025 | Unidad Educativa Fiscal Dolores Sucre
+    </p>
+</body>
+</html>

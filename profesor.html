@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panel Profesor - Dolores Sucre</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header class="header small">
+    <div class="header-inner">
+      <img src="escudo-pequeno.png" alt="Escudo" class="escudo-small" />
+      <div class="header-text">
+        <h2 class="school-name small">Unidad Educativa Fiscal Dolores Sucre</h2>
+        <p class="school-meta small">AMIE 09H01213 • Distrito Guayaquil • Circuito 01</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="manuales.html">Manuales</a>
+      <a href="juego.html">Juego</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="login-section" class="card center">
+      <h3>Ingreso Profesor</h3>
+      <p>Usa el correo autorizado y la contraseña de prueba.</p>
+      <form id="login-form">
+        <label>Correo</label>
+        <input id="login-email" type="email" required placeholder="correo@ejemplo.com" />
+        <label>Contraseña</label>
+        <input id="login-pass" type="password" required placeholder="Contraseña" />
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Ingresar</button>
+        </div>
+        <p class="small-note">Correo autorizado: <strong>disaxther@gmail.com</strong> • Contraseña: <strong>12345</strong></p>
+      </form>
+    </section>
+
+    <section id="prof-panel" class="hidden">
+      <div class="card">
+        <h3>Crear material</h3>
+        <form id="create-material-form">
+          <label>Título</label>
+          <input id="mat-title" required />
+          <label>Descripción</label>
+          <textarea id="mat-desc" rows="3"></textarea>
+          <label>Tipo</label>
+          <select id="mat-type">
+            <option value="file">Archivo</option>
+            <option value="eval">Evaluación informativa</option>
+          </select>
+          <label>Fecha de publicación</label>
+          <input id="mat-date" type="date" />
+          <div id="file-field">
+            <label>Subir archivo</label>
+            <input id="mat-file" type="file" />
+          </div>
+          <div id="eval-field" class="hidden">
+            <label>Instrucciones</label>
+            <textarea id="mat-instr" rows="2"></textarea>
+            <label>Preguntas (una por línea)</label>
+            <textarea id="mat-questions" rows="4"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Publicar</button>
+            <button class="btn" type="button" id="logout-btn">Cerrar sesión</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Materiales publicados</h3>
+        <div id="materials-admin" class="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Contacto del proyecto: <strong>disaxther@gmail.com</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

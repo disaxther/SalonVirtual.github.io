@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panel Profesor</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <img src="dolores.png" class="logo-small">
+      <div style="flex:1">
+        <h2>👨‍🏫 Panel del Profesor</h2>
+        <p class="small">Gestione materiales y evaluaciones</p>
+      </div>
+      <div style="text-align:right;font-size:0.85em;opacity:0.9">
+        <strong>Dolores Sucre</strong><br>
+        AMIE: 09H01213
+      </div>
+      <nav style="margin-left:30px;display:flex;gap:15px;align-items:center;font-size:0.95em">
+        <a href="index.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Inicio</a>
+        <a href="manuals.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Manuales</a>
+        <a href="role.html" style="color:#fff;text-decoration:none;padding:6px 12px;border-radius:6px;transition:0.3s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='transparent'">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="nav container" style="display:none">
+    <a href="index.html">Inicio</a>
+    <a href="manuals.html">Manuales</a>
+    <a href="role.html" class="right">Salir</a>
+  </nav>
+
+  <main class="container">
+    <div id="login-card" class="card">
+      <h3>🔐 Acceso Profesor</h3>
+      <form id="teacher-login">
+        <label>Correo autorizado</label>
+        <input type="email" id="teacher-email" required>
+        <label>Contraseña</label>
+        <input type="password" id="teacher-password" required>
+        <div class="actions">
+          <button class="btn primary" type="submit">Iniciar Sesión</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="manage-panel" class="hidden">
+      <div class="card">
+        <h3>➕ Crear Tarea o Material</h3>
+        <form id="create-material-form">
+          <label>Tipo de contenido</label>
+          <select id="mat-content-type">
+            <option value="tarea">📋 Tarea (para que hagan)</option>
+            <option value="material">📚 Material (guía/recurso)</option>
+          </select>
+          <label>Título</label>
+          <input id="mat-title" required>
+          <label>Descripción</label>
+          <textarea id="mat-desc" rows="3"></textarea>
+          <label>Fecha límite (opcional)</label>
+          <input type="date" id="mat-deadline">
+          <div id="mat-extra"></div>
+          <div class="actions">
+            <button class="btn primary" type="submit">Publicar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>📋 Tareas Publicadas</h3>
+        <div id="teacher-tasks" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h3>📚 Materiales Publicados</h3>
+        <div id="teacher-materials" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h3>📥 Envíos de Estudiantes</h3>
+        <div id="teacher-submissions" class="list"></div>
+      </div>
+
+      <div class="actions">
+        <button id="logout-btn" class="btn" onclick="logoutTeacher()">🚪 Cerrar Sesión</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 Unidad Educativa Dolores Sucre</footer>
+  <script src="script.js"></script>
+</body>
+</html>
