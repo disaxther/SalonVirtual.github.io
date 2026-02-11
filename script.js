@@ -1121,7 +1121,11 @@ function closeEvaluationModal() {
 
 // ===== SUBIDA DE ARCHIVOS DESDE ESTUDIANTES =====
 function openMaterialUpload(taskId) {
-  const task = CONFIG.tasks.find(t => t.id === taskId);
+  // Buscar la tarea en localStorage primero, luego en CONFIG
+  let task = JSON.parse(localStorage.getItem('ue_tasks') || '[]').find(t => t.id === taskId);
+  if (!task) {
+    task = CONFIG.tasks.find(t => t.id === taskId);
+  }
   if (!task) return;
 
   const html = `
@@ -1161,7 +1165,11 @@ function handleMaterialUpload(e) {
   const modal = document.getElementById('mat-modal');
   if (!modal) return;
   const taskId = parseInt(modal.dataset.taskId);
-  const task = CONFIG.tasks.find(t => t.id === taskId) || {};
+  // Buscar en localStorage primero, luego en CONFIG
+  let task = JSON.parse(localStorage.getItem('ue_tasks') || '[]').find(t => t.id === taskId);
+  if (!task) {
+    task = CONFIG.tasks.find(t => t.id === taskId) || {};
+  }
   const name = document.getElementById('mat-name').value;
   const file = document.getElementById('mat-file').value;
 
